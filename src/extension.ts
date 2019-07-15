@@ -1,6 +1,7 @@
-import * as fs from 'fs'
 import * as path from 'path'
 import * as vscode from 'vscode'
+
+import { convert } from './compile'
 
 const warn = (message: string) => {
   vscode.window.showWarningMessage(message)
@@ -13,15 +14,13 @@ export function activate(context: vscode.ExtensionContext) {
       if (vscode.window.activeTextEditor) {
         const file = vscode.window.activeTextEditor.document.fileName
         const ext = path.extname(file)
-        if (ext !== '.js') {
+        if (ext.indexOf('.js') < 0) {
           warn('only support js file convert to ts!')
+          return
         }
-        const tsfile = file.slice(0, file.indexOf(ext)) + ext.replace('j', 't')
-        fs.writeFileSync(tsfile, 'new ts file', {
-          encoding: 'utf-8',
-        })
+        const tsFile = convert(file)
 
-        vscode.workspace.openTextDocument(tsfile).then(document => {
+        vscode.workspace.openTextDocument(tsFile).then(document => {
           vscode.window.showTextDocument(document)
         })
       } else {
