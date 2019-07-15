@@ -1,8 +1,14 @@
 {
 	"name": "react-js-convert-ts",
+	"publisher": "sonacy",
+	"license": "MIT",
+	"repository": {
+		"type": "git",
+		"url": "git@github.com:sonacy/react-js-convert-ts.git"
+	},
 	"displayName": "react js convert ts",
 	"description": "",
-	"version": "0.0.1",
+	"version": "0.0.2",
 	"engines": {
 		"vscode": "^1.36.0"
 	},
@@ -14,12 +20,10 @@
 	],
 	"main": "./out/extension.js",
 	"contributes": {
-		"commands": [
-			{
-				"command": "extension.convertToTs",
-				"title": "convert js to ts"
-			}
-		]
+		"commands": [{
+			"command": "extension.convertToTs",
+			"title": "convert js to ts"
+		}]
 	},
 	"scripts": {
 		"vscode:prepublish": "yarn run compile",

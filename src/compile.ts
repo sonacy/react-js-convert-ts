@@ -36,6 +36,7 @@ export const compile = (realPath: string, compileOptions: CompilerOptions) => {
   ])
 
   const printer = createPrinter()
+
   const printed = printer.printNode(
     EmitHint.SourceFile,
     result.transformed[0],
