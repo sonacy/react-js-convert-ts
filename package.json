@@ -1,6 +1,6 @@
 {
 	"name": "react-js-convert-ts",
-	"publisher": "sonacy",
+	"publisher": "react-js-convert-ts",
 	"license": "MIT",
 	"repository": {
 		"type": "git",
@@ -8,9 +8,9 @@
 	},
 	"displayName": "react js convert ts",
 	"description": "",
-	"version": "0.0.2",
+	"version": "0.0.3",
 	"engines": {
-		"vscode": "^1.36.0"
+		"vscode": "^1.36.1"
 	},
 	"categories": [
 		"Other"
@@ -41,10 +41,10 @@
 		"glob": "^7.1.4",
 		"mocha": "^6.1.4",
 		"tslint": "^5.12.1",
-		"typescript": "^3.3.1",
 		"vscode-test": "^1.0.0-next.0"
 	},
 	"dependencies": {
-		"prettier": "^1.18.2"
+		"prettier": "^1.18.2",
+		"typescript": "^3.5.3"
 	}
 }
